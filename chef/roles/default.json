@@ -11,9 +11,16 @@
     "recipe[mysql]",
     "recipe[mysql::server]",
     "recipe[php]",
-    "recipe[php::module_mysql]",
-    "recipe[apache2::vhosts]",
-    "recipe[database::mysql]",
-    "recipe[database::import]"
-  ]
+    "recipe[php::module_mysql]"
+  ],
+  "override_attributes": {
+    "mysql": {
+      "server_root_password": "root",
+      "server_debian_password": "root",
+      "server_repl_password": "root"
+    },
+    "apache": {
+      "default_site_enabled": true
+    }
+  }
 }
