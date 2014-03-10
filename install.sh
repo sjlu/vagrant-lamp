@@ -31,3 +31,5 @@ git config -f .gitmodules --get-regexp '^submodule\..*\.path$' |
     rm -r $path
     git submodule add $url $path
   done
+
+echo "Now run 'vagrant up' to start the stack, it then can be accessed at 'http://$1.vagrant'"
