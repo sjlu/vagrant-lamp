@@ -1,8 +1,10 @@
 #!/bin/bash
 
 set -e
+color='\033[33m'
+white='\033[37m'
 
-if [ '$#' -lt 1 ]; then
+if [ "$#" -lt 1 ]; then
   echo "Usage: ./install.sh <project_name>"
   exit 1
 fi
@@ -12,7 +14,7 @@ if [ -d "$folder_input" ]; then
   exit 1
 fi
 
-echo "Cloning and creating Vagrant LAMP stack."
+echo -e "\n${color}Cloning and creating Vagrant LAMP stack.\n${white}"
 
 wget https://github.com/sjlu/vagrant-lamp/archive/master.zip -O master.zip
 unzip master.zip
@@ -32,4 +34,4 @@ git config -f .gitmodules --get-regexp '^submodule\..*\.path$' |
     git submodule add $url $path
   done
 
-echo "Now run 'vagrant up' to start the stack, it then can be accessed at 'http://$1.vagrant'"
+echo -e "\n\n${color}Now run 'vagrant up' to start the stack, it then can be accessed at 'http://$1.vagrant'${white}"
