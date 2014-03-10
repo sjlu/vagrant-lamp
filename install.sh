@@ -4,6 +4,7 @@ set -e
 
 if [ '$#' -lt 1 ]; then
   echo "Usage: ./install.sh <project_name>"
+  exit 1
 fi
 
 if [ -d "$folder_input" ]; then
