@@ -18,10 +18,9 @@ Vagrant.configure("2") do |config|
   # sync the web folder
   config.vm.synced_folder "www/", "/var/www"
 
-  # chef config
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = ["chef/cookbooks"]
-    chef.roles_path = "chef/roles"
-    chef.add_role "default"
+  # puppet
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet/manifests"
+    puppet.manifest_file = "default.pp"
   end
 end
