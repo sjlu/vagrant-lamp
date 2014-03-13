@@ -1,21 +1,18 @@
-class apache {
-  package { "apache2"
-    ensure => present
+class packages {
+  exec { "apt-get update":
+    command => "/usr/bin/apt-get update"
+  }
+
+  $packages = [
+    'apache2',
+    'php5',
+    'mysql-server'
+  ]
+
+  package { $packages:
+    ensure => present,
+    require => Exec["apt-get update"]
   }
 }
 
-class php {
-  package { "php"
-    ensure => present
-  }
-}
-
-class mysql {
-  package { "mysql-server"
-    ensure => present
-  }
-}
-
-include apache
-include php
-include mysql
+include packages
