@@ -6,7 +6,10 @@ class packages {
   $packages = [
     'apache2',
     'php5',
-    'mysql-server'
+    'php-pear',
+    'mysql-server',
+    'php5-mysql',
+    'php5-suhosin'
   ]
 
   package { $packages:
