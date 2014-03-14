@@ -24,14 +24,6 @@ cd $1
 
 sed -i '' 's/lamp\.vagrant/'$1'.vagrant/g' Vagrantfile
 
-git init
-git config -f .gitmodules --get-regexp '^submodule\..*\.path$' | 
-  while read path_key path 
-  do
-    url_key=$(echo $path_key | sed 's/\.path/.url/')
-    url=$(git config -f .gitmodules --get "$url_key")
-    rm -r $path
-    git submodule add $url $path
-  done
+vagrant up
 
-echo -e "\n\n${color}Now run 'vagrant up' to start the stack, it then can be accessed at 'http://$1.vagrant'${white}"
+echo -e "\n\n${color}Stack has been created. You can now visit 'http://$1.vagrant'${white}"
