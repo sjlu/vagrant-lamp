@@ -10,6 +10,7 @@ class packages {
     'mysql-server',
     'php5-mysql',
     'php5-suhosin',
+    'php5-json',
     'libapache2-mod-php5',
     'libapache2-mod-auth-mysql'
   ]
