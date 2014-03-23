@@ -12,6 +12,15 @@ This install uses Vagrant and Puppet to get you a basic LAMP install on a virtua
 
     * Make sure you replace `<project_name>` with the folder name you'd wish to create.
 
+## Development
+
+* Do your web development in the [www](www/) folder.
+
+* Access MySQL through SSH.
+
+        vagrant ssh
+        mysql -u root
+
 ## License
 
 MIT.
