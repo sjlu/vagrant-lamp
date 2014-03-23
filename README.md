@@ -1,6 +1,6 @@
 ## Vagrant LAMP
 
-This LAMP stack is built using Chef cookbooks and Vagrant.
+This LAMP stack is built using Puppet and Vagrant. This was intended for development purposes only.
 
 ## Install
 
