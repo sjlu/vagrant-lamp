@@ -10,10 +10,8 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--memory", "512"]
   end
 
-  # requires the vagrant-hostsupdater plugin
-  config.hostsupdater.remove_on_suspend = true
-  config.vm.network :private_network, ip: "10.10.1.2"
-  config.vm.hostname = "lamp.vagrant"
+  # forward web ports
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # sync the web folder
   config.vm.synced_folder "www/", "/var/www"

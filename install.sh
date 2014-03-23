@@ -21,9 +21,3 @@ unzip master.zip
 rm master.zip
 mv vagrant-lamp-master $1
 cd $1
-
-sed -i '' 's/lamp\.vagrant/'$1'.vagrant/g' Vagrantfile
-
-vagrant up
-
-echo -e "\n\n${color}Stack has been created. You can now visit 'http://$1.vagrant'${white}"
