@@ -1,13 +1,17 @@
 ## Vagrant LAMP
 
-This LAMP stack is built using Puppet and Vagrant. This was intended for development purposes only.
+This install uses Vagrant and Puppet to get you a basic LAMP install on a virtual environment. This is great for when you don't want to install the environment onto your local machine and to keep environments consistant across all machines. This was only intended for development purposes.
 
 ## Install
 
-This script will instantiate a new Vagrant project. Make sure you replace `project_name` with the name you want.
+* First install [Vagrant](http://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/).
 
-    curl https://raw.github.com/sjlu/vagrant-lamp/master/install.sh | bash -s <project_name>
+* Then use the following script to instantiate a new project.
 
-### License
+        curl https://raw.github.com/sjlu/vagrant-lamp/master/install.sh | bash -s <folder_name>
+
+    * Make sure you replace `<project_name>` with the folder name you'd wish to create.
+
+## License
 
 MIT.
