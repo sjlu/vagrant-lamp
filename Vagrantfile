@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # sync the web folder
-  config.vm.synced_folder "www/", "/var/www"
+  config.vm.synced_folder "www/", "/var/www", owner: "www-data", group: "www-data"
 
   # puppet
   config.vm.provision :puppet do |puppet|
